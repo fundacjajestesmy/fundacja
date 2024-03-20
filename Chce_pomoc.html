@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chcę pomóc</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #FFFFFF;
+        }
+        header {
+            background-color: #FFFFFF; /* Białe tło */
+            color: #333; /* Ciemny kolor tekstu */
+            padding: 5px 20px; /* Zmniejszenie paddingu górnego i dolnego */
+            height: 80px; /* Nowa wysokość nagłówka */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Cień */
+        }
+		
+        footer {
+            background-color: #FFFFFF; /* Ciemny kolor tła stopki */
+            color: #008080; /* Jasny kolor tekstu */
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+		
+		.image-container {
+           /* border: 2px solid #000;*/
+            width: 300px;
+            height: 150px;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            max-width: 90%;
+            max-height: 90%;
+            transition: transform 0.3s ease;
+			margin: 0 auto; 
+			display: block;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.2); /* Powiększenie o 20% */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="Fundacja.html">
+			<img src="logo.png" alt="Logo">
+		</a>
+    </header>
+    <div class="content">
+        <div style="padding: 25px 50px 75px 75px;">   
+				<p style="font-family: 'Arial', Times, serif; color:#008080; font-size: 28px;">
+					<strong>Dziękujemy za chęć pomocy naszym Podopiecznym. Wszystkie przekazane darowizny na rzecz Fundacji JesteśMY! przeznaczone zostają na działalność statutową.
+					Pomóc możesz na kilka sposób:
+					</strong>
+				</p>		
+				<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#008080; font-size: 22px;">
+					<strong>Wpłać darowiznę</strong>
+				</p>	
+					
+				<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#31a097; font-size: 18px;">
+					Numer rachunku .................. (jak założymi konto to udostępnimy)<br/>
+					Tytuł: Darowizna na cele statutowe
+				</p>			
+        </div>
+		
+		
+		<div style="padding: 25px 50px 150px 75px;">
+	
+			<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#008080; font-size: 22px;">
+				<strong>Wesprzej również innych</strong>
+			</p>	
+			<div class="image-container" style="display: flex; justify-content: center; align-items: center; float:left; margin:10px;">
+				<a href="https://www.siepomaga.pl/" target="_blank">
+					<img src="sie_pomaga.png" alt="Logo">
+				</a>
+			</div>
+			
+			<div class="image-container" style="display: flex; justify-content: center; align-items: center; float:left; margin:10px;">
+				<a href="https://fundacja-pomagam.pl/" target="_blank">
+					<img src="pomagam.png" alt="Logo">
+				</a>
+			</div>
+		</div>
+		
+    </div>
+    <footer>
+        Nasza siedziba: ul. cccccccccc, 83-230 Smętowo Graniczne
+    </footer>
+</body>
+</html>

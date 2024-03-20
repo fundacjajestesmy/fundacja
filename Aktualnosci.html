@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktualności</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+        }
+        header {
+            background-color: #FFFFFF; /* Białe tło */
+            color: #333; /* Ciemny kolor tekstu */
+            padding: 5px 20px; /* Zmniejszenie paddingu górnego i dolnego */
+            height: 80px; /* Nowa wysokość nagłówka */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Cień */
+        }
+
+        h2 {
+            color: #008080; /* Czerwony kolor */
+        }
+        
+        footer {
+            background-color: #FFFFFF; /* Ciemny kolor tła stopki */
+            color: #008080; /* Jasny kolor tekstu */
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+        .image-container {
+            /* border: 2px solid #000;*/
+            width: 20%;
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .tekst-container {
+            /* border: 2px solid #000;*/
+            width: 53%;
+            height: 300px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            max-height: 100%;
+            margin: 0 auto; 
+            display: block;
+        }
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.7); /* Przezroczyste tło */
+            padding: 10px;
+            color: #000; /* Kolor tekstu */
+        }
+
+
+        /* Styl modala */
+        .modal {
+          display: none; /* Ukrywamy modal domyślnie */
+          position: fixed; /* Modal jest pozycjonowany w sposób absolutny */
+          z-index: 1; /* Na wierzchu innych elementów */
+          padding-top: 50px; /* Odległość od góry ekranu */
+          left: 0;
+          top: 0;
+          width: 100%; /* Pełna szerokość modala */
+          height: 100%; /* Pełna wysokość modala */
+          overflow: auto; /* Dodanie scrolla, jeśli zawartość modala jest większa niż okno przeglądarki */
+          background-color: rgb(0,0,0); /* Kolor tła */
+          background-color: rgba(0,0,0,0.9); /* Kolor tła z przezroczystością */
+        }
+
+        /* Styl obrazu w modalu */
+        .modal-content {
+          margin: auto;
+          display: block;
+          width: 80%; /* Szerokość obrazu w modalu */
+          max-width: 700px; /* Maksymalna szerokość obrazu */
+        }
+
+        /* Styl ikony zamknięcia */
+        .close {
+          position: absolute;
+          top: 15px;
+          right: 35px;
+          color: #f1f1f1;
+          font-size: 40px;
+          font-weight: bold;
+          transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: #bbb;
+          text-decoration: none;
+          cursor: pointer;
+        }   
+        
+        /* Media queries dla małych ekranów */
+        @media only screen and (max-width: 1000px) {
+            .image-container {
+                width: 100%;
+            }
+            .tekst-container {
+                width: 95%;
+                margin-top: 20px; /* Dodatkowy margines na małych ekranach */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="Fundacja.html">
+            <img src="logo.png" alt="Logo">
+        </a>
+    </header>
+            <h2 style="text-align: center; font-size: 28px;">2024</h2>
+            <p style="text-align: justify; font-family: 'Arial', Times, serif; color:#008080; margin:20px; font-size: 22px;">
+                    <strong>MARZEC</strong>
+            </p>    
+            <br>
+            
+    <!--  <div style="border: 2px solid #31a097; width: 100%; height: 330px;"> -->
+    
+            <div class="image-container" style="display: flex; justify-content: center; align-items: center; float:left; margin:10px; position: relative;">
+                <img src="Aktualnosci/2024 Marzec/3.jpg" alt="Logo" onmouseover="changeCursor(this)" onmouseleave="restoreCursor()" onclick="openModal(this)">
+                <div class="image-overlay"><strong>Przed</strong></div>
+            </div>
+            
+            <div class="image-container" style="display: flex; justify-content: center; align-items: center; float:left; margin:10px; position: relative;">
+                <img src="Aktualnosci/2024 Marzec/1.jpg" alt="Logo" onmouseover="changeCursor(this)" onmouseleave="restoreCursor()" onclick="openModal(this)">
+                <div class="image-overlay"><strong>Po</strong></div>
+            </div>
+
+            <!-- Modal -->
+            <div id="myModal" class="modal">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <img class="modal-content" id="img01">
+            </div>
+            
+             <script>
+             // Funkcja zmieniająca kursor na łapkę
+                function changeCursor(img) {
+                    img.style.cursor = "pointer";
+                }
+
+                // Funkcja przywracająca domyślny kursor
+                function restoreCursor() {
+                    var img = document.querySelector('.image-container img');
+                    img.style.cursor = "auto";
+                }
+             </script>
+             
+            
+
+			 <script>
+			 // Funkcja otwierająca modal i ustawiająca obraz w modalu
+				function openModal(img) {
+				  var modal = document.getElementById("myModal");
+				  var modalImg = document.getElementById("img01");
+				  modal.style.display = "block";
+				  modalImg.src = img.src;
+				}
+
+				// Funkcja zamykająca modal
+				function closeModal() {
+				  var modal = document.getElementById("myModal");
+				  modal.style.display = "none";
+				}
+			</script>
+		
+			<div class="tekst-container" style="display: flex; flex-direction: column; align-items: left; float:left; margin: 10px;">
+				<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#31a097; margin: 0;">
+					Pan Starszy Sympatyczny będzie miał nowy, sprawny piec ❤️
+				</p>
+				<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#31a097; margin: 0;">
+					Pamiętasz facebook'u, jakiś czas temu prosiłam o wsparcie zbiórki na zakup westfalki dla potrzebującego starszego pana, który choć mieszka w skrajnie skromnych warunkach - to swoim pozytywnym nastawieniem do świata jedna sobie ludzi. 
+				</p>
+				<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#31a097; margin: 0;">
+					Mnie kupił totalnie. 😎
+				</p>
+				<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#31a097; margin: 0;">
+					Poznaliśmy się przypadkiem, przy okazji pewnej świątecznej akcji i los tak chciał, że staliśmy się przyjaciółmi. Nasza czwórka i Pan Starszy Sympatyczny. Ekipa, która w krótkim czasie poradziła sobie już z efektami garbatego szczęścia, typu: cieknąca lodówka, niesprawny telewizor, teraz piec.
+				</p>
+				<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#31a097; margin: 0;">
+					Dziękuję wszystkim i każdemu z osobna za dorzucenie grosza do zbiórki i jej wsparcie choćby poprzez udostępnienia. ❤️ Bardzo dziękuję firmie Higher za udzielony rabat, dzięki któremu nie tylko zakupiliśmy westfalkę, ale zostało nam także na "kolanko" i kilka brakujących elementów. 🙌
+				</p>
+				<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#31a097; margin: 0;">
+					Pan Starszy Sympatyczny także Wam bardzo dziękuje, chociaż chyba nadal nie dowierza, że już niedługo zamiast grożącego zaczadzenim pieca (fotka dla przypomnienia👇) będzie miał tę o to nową westfaleczkę. 😀👌 Nie zwalniamy i będziemy działać dalej, bo potrzeby są wciąż ogromne. Każda chęć pomocy mile widziana. 
+				</p>
+				<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#31a097; margin: 0;">
+					A za zbiórkę... Serio, wielkie dzięki! Cieszymy się jak dzieci. 🙋‍♀️
+				</p>
+			</div>
+		<!--	</div> -->
+		
+    <footer>
+        Nasza siedziba: ul. cccccccccc, 83-230 Smętowo Graniczne
+    </footer>
+</body>
+</html>
