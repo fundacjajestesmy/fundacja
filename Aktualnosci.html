@@ -21,11 +21,7 @@
             justify-content: space-between;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Cień */
         }
-
-        h2 {
-            color: #008080;
-        }
-        
+		
         footer {
             font-size: 12px;
             background-color: #31a097;
@@ -36,175 +32,99 @@
             bottom: 0;
             width: 100%;
         }
-        
+        .container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+        }
+
         .image-container {
-            /* border: 2px solid #000;*/
-            width: 20%;
-            height: 300px;
-            overflow: hidden;
-        }
-        
-        .tekst-container {
-            /* border: 2px solid #000;*/
-            width: 53%;
-            height: 600px;
+          position: relative; /* Ustawienie pozycji względem kontenera */
+          width: 300px; /* Dostosuj szerokość kontenera według potrzeb */
+          margin-bottom: 20px; /* Dostosuj marginesy według potrzeb */
         }
 
-        .image-container img {
-            max-width: 100%;
-            max-height: 100%;
-            margin: 0 auto; 
-            display: block;
-        }
-        .image-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: rgba(255, 255, 255, 0.7); /* Przezroczyste tło */
-            padding: 10px;
-            color: #000; /* Kolor tekstu */
+        .image {
+          width: 100%; /* Obraz zajmie całą szerokość kontenera */
         }
 
-
-        /* Styl modala */
-        .modal {
-          display: none; /* Ukrywamy modal domyślnie */
-          position: fixed; /* Modal jest pozycjonowany w sposób absolutny */
-          z-index: 1; /* Na wierzchu innych elementów */
-          padding-top: 50px; /* Odległość od góry ekranu */
-          left: 0;
-          top: 0;
-          width: 100%; /* Pełna szerokość modala */
-          height: 100%; /* Pełna wysokość modala */
-          overflow: auto; /* Dodanie scrolla, jeśli zawartość modala jest większa niż okno przeglądarki */
-          background-color: rgb(0,0,0); /* Kolor tła */
-          background-color: rgba(0,0,0,0.9); /* Kolor tła z przezroczystością */
+        .image-caption {
+          position: absolute; /* Ustawienie absolutnej pozycji */
+          bottom: 0; /* Opis będzie umieszczony na dole obrazka */
+          left: 0; /* Opis będzie wyrównany do lewej */
+          width: 100%; /* Opis będzie zajmować całą szerokość obrazka */
+          background-color: rgba(0, 0, 0, 0.5); /* Przezroczyste tło */
+          color: white; /* Kolor tekstu */
+          padding: 5px; /* Dostosuj wewnętrzne odstępy */
+          box-sizing: border-box; /* Wliczenie paddingu w szerokość i wysokość */
+          font-size: 16px; /* Zmniejsz rozmiar tekstu */
         }
 
-        /* Styl obrazu w modalu */
-        .modal-content {
-          margin: auto;
-          display: block;
-          width: 80%; /* Szerokość obrazu w modalu */
-          max-width: 700px; /* Maksymalna szerokość obrazu */
+        .image-caption2 {
+            position: absolute; /* Ustawienie absolutnej pozycji */
+            top: 0; /* Opis będzie umieszczony na dole obrazka */
+            right: 0; /* Opis będzie wyrównany do prawej */
+            width: 50%; /* Opis będzie zajmować 60% szerokości obrazka */
+            text-align: center;
+            background-color: rgb(239, 80, 122);
+            color: white; /* Kolor tekstu */
+            padding: 5px; /* Dostosuj wewnętrzne odstępy */
+            box-sizing: border-box; /* Wliczenie paddingu w szerokość i wysokość */
+            margin: 10px; /* Dodaj odstępy zewnętrzne */
+            font-size: 16px; /* Zmniejsz rozmiar tekstu */
+            border-radius: 10px; /* Zaokrąglij rogi */
         }
 
-        /* Styl ikony zamknięcia */
-        .close {
-          position: absolute;
-          top: 15px;
-          right: 35px;
-          color: #f1f1f1;
-          font-size: 40px;
-          font-weight: bold;
-          transition: 0.3s;
-        }
+        @media screen and (max-width: 800px) {
+          .image-container {
+            width: 150px; /* Dostosuj szerokość kontenera dla mniejszych ekranów */     
+          }
 
-        .close:hover,
-        .close:focus {
-          color: #bbb;
-          text-decoration: none;
-          cursor: pointer;
-        }   
-        
-        /* Media queries dla małych ekranów */
-        @media only screen and (max-width: 1000px) {
-            .image-container {
-                width: 100%;
-            }
-            .tekst-container {
-                width: 95%;
-                margin-top: 20px; /* Dodatkowy margines na małych ekranach */
-            }
+          .image-caption {
+            font-size: 10px; /* Zmniejsz rozmiar tekstu w kontenerze */
+          }
+
+          .image-caption2 {
+            font-size: 10px; /* Zmniejsz rozmiar tekstu w kontenerze */
+          }
         }
     </style>
 </head>
 <body>
     <header>
         <a href="index.html">
-            <img src="logo.png" alt="Logo">
-        </a>
+			<img src="logo.png" alt="Logo">
+		</a>
     </header>
-            <h2 style="text-align: center; font-size: 28px;">2024</h2>
-            <p style="text-align: justify; font-family: 'Arial', Times, serif; color:#008080; margin:20px; font-size: 22px;">
-                    <strong>MARZEC</strong>
-            </p>    
-            <br>
-            
-    <!--  <div style="border: 2px solid #31a097; width: 100%; height: 330px;"> -->
-    
-            <div class="image-container" style="display: flex; justify-content: center; align-items: center; float:left; margin:10px; position: relative;">
-                <img src="Aktualnosci/2024 Marzec/3.jpg" alt="Logo" onmouseover="changeCursor(this)" onmouseleave="restoreCursor()" onclick="openModal(this)">
-                <div class="image-overlay"><strong>Przed</strong></div>
-            </div>
-            
-            <div class="image-container" style="display: flex; justify-content: center; align-items: center; float:left; margin:10px; position: relative;">
-                <img src="Aktualnosci/2024 Marzec/1.jpg" alt="Logo" onmouseover="changeCursor(this)" onmouseleave="restoreCursor()" onclick="openModal(this)">
-                <div class="image-overlay"><strong>Po</strong></div>
-            </div>
 
-            <!-- Modal -->
-            <div id="myModal" class="modal">
-              <span class="close" onclick="closeModal()">&times;</span>
-              <img class="modal-content" id="img01">
-            </div>
-            
-             <script>
-             // Funkcja zmieniająca kursor na łapkę
-                function changeCursor(img) {
-                    img.style.cursor = "pointer";
-                }
+    <div class="container">
+        <div class="image-container">
+          <a href="Aktualnosci\Kuchenka.html">
+            <img src="Aktualnosci\1.jpg" alt="Obraz 1" class="image">
+            <div class="image-caption">Zakup nowej kuchenki dla Pana Starszego Sympatycznego</div>
+            <div class="image-caption2">Wydarzenie</div>
+          </a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.example.com">
+            <img src="3.jpg" alt="Obraz 2" class="image">
+            <div class="image-caption">Opis obrazu 2</div>
+          </a>
+        </div>
+        <div class="image-container">
+          <a href="https://www.example.com">
+            <img src="obraz3.jpg" alt="Obraz 3" class="image">
+            <div class="image-caption">Opis obrazu 3</div>
+          </a>
+        </div>
+        <!-- Dodaj więcej obrazów według potrzeb -->
+      </div>
 
-                // Funkcja przywracająca domyślny kursor
-                function restoreCursor() {
-                    var img = document.querySelector('.image-container img');
-                    img.style.cursor = "auto";
-                }
-             </script>
+      <br><br><br>
+      <button onclick="window.location.href='index.html'" style="margin-left: 10px; font-size: 16px; background-color: #31a097; padding: 10px; border-radius: 10px;">Powrót</button>
 
-			 <script>
-			 // Funkcja otwierająca modal i ustawiająca obraz w modalu
-				function openModal(img) {
-				  var modal = document.getElementById("myModal");
-				  var modalImg = document.getElementById("img01");
-				  modal.style.display = "block";
-				  modalImg.src = img.src;
-				}
-
-				// Funkcja zamykająca modal
-				function closeModal() {
-				  var modal = document.getElementById("myModal");
-				  modal.style.display = "none";
-				}
-			</script>
-		
-			<div class="tekst-container" style="display: flex; flex-direction: column; align-items: left; float:left; margin: 10px;">
-				<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#31a097; margin: 0;">
-					Pan Starszy Sympatyczny będzie miał nowy, sprawny piec ❤️
-				</p>
-				<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#31a097; margin: 0;">
-					Pamiętasz facebook'u, jakiś czas temu prosiłam o wsparcie zbiórki na zakup westfalki dla potrzebującego starszego pana, który choć mieszka w skrajnie skromnych warunkach - to swoim pozytywnym nastawieniem do świata jedna sobie ludzi. 
-				</p>
-				<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#31a097; margin: 0;">
-					Mnie kupił totalnie. 😎
-				</p>
-				<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#31a097; margin: 0;">
-					Poznaliśmy się przypadkiem, przy okazji pewnej świątecznej akcji i los tak chciał, że staliśmy się przyjaciółmi. Nasza czwórka i Pan Starszy Sympatyczny. Ekipa, która w krótkim czasie poradziła sobie już z efektami garbatego szczęścia, typu: cieknąca lodówka, niesprawny telewizor, teraz piec.
-				</p>
-				<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#31a097; margin: 0;">
-					Dziękuję wszystkim i każdemu z osobna za dorzucenie grosza do zbiórki i jej wsparcie choćby poprzez udostępnienia. ❤️ Bardzo dziękuję firmie Higher za udzielony rabat, dzięki któremu nie tylko zakupiliśmy westfalkę, ale zostało nam także na "kolanko" i kilka brakujących elementów. 🙌
-				</p>
-				<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#31a097; margin: 0;">
-					Pan Starszy Sympatyczny także Wam bardzo dziękuje, chociaż chyba nadal nie dowierza, że już niedługo zamiast grożącego zaczadzenim pieca (fotka dla przypomnienia👇) będzie miał tę o to nową westfaleczkę. 😀👌 Nie zwalniamy i będziemy działać dalej, bo potrzeby są wciąż ogromne. Każda chęć pomocy mile widziana. 
-				</p>
-				<p style="text-align: justify; font-family: 'Arial', Times, serif; color:#31a097; margin: 0;">
-					A za zbiórkę... Serio, wielkie dzięki! Cieszymy się jak dzieci. 🙋‍♀️
-				</p>
-			</div>
-		<!--	</div> -->
-		
     <footer>
-        Nasza siedziba: ul. cccccccccc, 83-230 Smętowo Graniczne
+      © 2024 – Fundacja JesteśMY – Wszelkie prawa zastrzeżone
     </footer>
 </body>
 </html>

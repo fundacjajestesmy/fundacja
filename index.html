@@ -144,8 +144,41 @@
             height: 60%;           
         }
 		
+        .container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                margin: 20px 0;
+            }
 
-		/* Nowe style responsywne dla małych ekranów */@media screen and (max-width: 800px) {
+            .item {
+                text-align: left;
+                width: 300px; /* szerokość kontenera */
+                height: auto; /* wysokość kontenera */
+                margin-bottom: 10px; /* odstęp między kontenerami */
+                overflow: hidden; /* ukrycie nadmiarowych fragmentów obrazu */
+            }
+
+            .item img {
+                width: 100%; /* obraz zajmuje całą szerokość kontenera */
+                height: auto; /* obraz zachowuje proporcje */
+                object-fit: cover; /* obraz jest dopasowywany do wymiarów kontenera */
+            }
+
+            .item p {
+                margin: 5px 0;
+            }
+
+            .small-text {
+                font-size: 20px; /* zmniejszenie rozmiaru tekstu */ 
+                padding: 5px;              
+            }
+
+
+
+
+
+		@media screen and (max-width: 800px) { /* Nowe style responsywne dla małych ekranów */
 			.content {
 				flex-direction: column; /* Zmiana układu na jedną kolumnę */
 				align-items: center; /* Wyśrodkowanie zawartości */
@@ -168,6 +201,10 @@
 				padding: 5px; /* Zmniejszenie wewnętrznego marginesu */
 				font-size: 50%; /* Zmniejszenie rozmiaru czcionki */
 			}		
+
+            .item {
+                width: 90%; /* pełna szerokość dla mniejszych ekranów */
+            }
 		}
 
     </style>
@@ -190,14 +227,13 @@
 			
 			<a style="margin-left: 20px;" href="O_nas.html">O nas</a>
             <a href="Chce_pomoc.html">Chcę pomóc</a>
-			<a href="xxxx">Kontakt</a>
+			<a href="Kontakt.html">Kontakt</a>
 		 </nav>	 		
     </header>
 
     <div class="full-page">
         <img src="1.jpg" alt="Full Page Image">
     </div>
-
 
     <div class="content">
 
@@ -207,10 +243,10 @@
 			
             <h2 style="color:#008080; font-size: 28px;">Fundacja JesteśMY</h2>
 			
-            <p style="text-align: justify; font-family: 'Arial', Times, serif; font-size: 18px; color:#31a097">
+            <p style="text-align: justify; font-family: 'Arial', Times, serif; font-size: 18px; color:#081716; line-height: 1.5;">
 			Inicjatywa powstania fundacji JesteśMy pochodzi od osób, które od ponad dekady działają charytatywnie i pracują społecznie. Osób, dla których niepełnosprawność, osamotnienie, starość, wykluczenie i ubóstwo to wystarczające powody do udzielenia mądrej, tzn. skonkretyzowanej pomocy.
 			</p>
-			<p style="text-align: justify; font-family: 'Arial', Times, serif; font-size: 18px; color:#31a097">
+			<p style="text-align: justify; font-family: 'Arial', Times, serif; font-size: 18px; color:#081716; line-height: 1.5;">
 				Nasza dotychczasowa wielopłaszczyznowa działalność na rzecz osób szczególnie potrzebujących wsparcia wywołała potrzebę zoptymalizowania wszystkich działań i narzędzi, a także opracowania konkretnego planu pomocy, aby zakres jej był nie tylko większy, ale także realnie bardziej celowy, a efekt rokujący.
 				<a href="Dlaczego_dzialamy.html" style="text-decoration: none; font-size: 15px; color: blue;">(Czytaj dalej)</a>
 			</p>
@@ -253,8 +289,38 @@
             </div>
         </div>
     </div>
+
+    <br><br><br>
+    
+    <h2 style="text-align: center; color: black; font-size: 38px;">
+        <span style="text-decoration: underline #008080;">Blog</span>
+    </h2>
+
+    <div class="container">
+        <div class="item">
+          <img src="x.jpg" alt="Obraz 1">
+          <p class="small-text"><strong>Czym jest fundacja?</strong></p>
+          <p style="padding: 5px; line-height: 1.5;">Poszczególne fundacje mogą różnić się między sobą diametralnie. Różnorodność ta wynika z tego .....</p>
+
+          <br>
+          <a href="xxxx.html" style="text-decoration: none; font-size: 15px; color: blue; padding: 5px;">(Czytaj dalej)</a>
+        </div>
+        <div class="item">
+          <img src="x.jpg" alt="Obraz 2">
+          <p>Opis obrazu 2</p>
+        </div>
+        <div class="item">
+          <img src="obraz3.jpg" alt="Obraz 3">
+          <p>Opis obrazu 3</p>
+        </div>
+        <div class="item">
+          <img src="obraz4.jpg" alt="Obraz 4">
+          <p>Opis obrazu 4</p>
+        </div>
+      </div>
+
     <footer>
-        Nasza siedziba: ul. cccccccccc, 83-230 Smętowo Graniczne
+        © 2024 – Fundacja JesteśMY – Wszelkie prawa zastrzeżone
     </footer>
 </body>
 </html>
