@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aktualności</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+        }
+		
+        header {
+            background-color: #FFFFFF; /* Białe tło */
+            color: #333; /* Ciemny kolor tekstu */
+            padding: 5px 20px; /* Zmniejszenie paddingu górnego i dolnego */
+            height: 80px; /* Nowa wysokość nagłówka */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Cień */
+        }
+        
+        footer {
+            font-size: 12px;
+            background-color: #31a097;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 1000px; /* Możesz dostosować szerokość kontenera głównego */
+            margin: 0 auto; /* Wyśrodkowanie kontenera */
+           /* border: 2px solid #000; /* Obramowanie 2px, czarne */
+        }
+
+        .image-container {
+            position: relative; /* Ustawienie pozycji względem kontenera */
+            width: 300px; /* Dostosuj szerokość kontenera według potrzeb */
+            margin-bottom: 20px; /* Dostosuj marginesy według potrzeb */
+          /*  border: 2px solid #000; /* Obramowanie 2px, czarne */
+        }
+
+        .image {
+            width: 100%; /* Obraz zajmie całą szerokość kontenera */
+        }
+
+        .image-caption {
+            position: absolute; /* Ustawienie absolutnej pozycji */
+            bottom: 0; /* Opis będzie umieszczony na dole obrazka */
+            left: 0; /* Opis będzie wyrównany do lewej */
+            width: 100%; /* Opis będzie zajmować całą szerokość obrazka */
+            background-color: rgba(0, 0, 0, 0.5); /* Przezroczyste tło */
+            color: white; /* Kolor tekstu */
+            padding: 5px; /* Dostosuj wewnętrzne odstępy */
+            box-sizing: border-box; /* Wliczenie paddingu w szerokość i wysokość */
+            font-size: 16px; /* Zmniejsz rozmiar tekstu */
+        }
+
+        .image-caption2 {
+            position: absolute; /* Ustawienie absolutnej pozycji */
+            top: 0; /* Opis będzie umieszczony na dole obrazka */
+            right: 0; /* Opis będzie wyrównany do prawej */
+            width: 50%; /* Opis będzie zajmować 60% szerokości obrazka */
+            text-align: center;
+            background-color: rgb(239, 80, 122);
+            color: white; /* Kolor tekstu */
+            padding: 5px; /* Dostosuj wewnętrzne odstępy */
+            box-sizing: border-box; /* Wliczenie paddingu w szerokość i wysokość */
+            margin: 10px; /* Dodaj odstępy zewnętrzne */
+            font-size: 16px; /* Zmniejsz rozmiar tekstu */
+            border-radius: 10px; /* Zaokrąglij rogi */
+        }
+
+		@media screen and (max-width: 600px) {
+			.container {
+				width: auto; /* Usuń sztywną szerokość */
+			}
+
+			.image-container {
+				width: 100%; /* Obrazek będzie zajmował całą szerokość ekranu */
+				margin-bottom: 20px; /* Zachowaj marginesy, jeśli to konieczne */
+			}
+
+			}
+			
+		@media screen and (min-width: 601px) and (max-width: 1000px) {
+				.container {
+					width: 600px; /* Podziel szerokość ekranu na dwie kolumny */
+				}
+
+				.image-container {
+					width: 280px; /* Dostosuj szerokość kontenera obrazka */
+					margin-bottom: 20px; /* Zachowaj marginesy, jeśli to konieczne */
+				}
+		}
+		}
+	}
+		
+		
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="logo.png" alt="Logo">
+        </a>
+    </header>
+
+    <div class="container">
+        <div class="image-container">
+            <a href="Aktualnosci\Kuchenka\Kuchenka.html">
+                <img src="Aktualnosci\Kuchenka\1.jpg" alt="Obraz 1" class="image">
+                <div class="image-caption">Zakup nowej kuchenki dla Pana Starszego Sympatycznego</div>
+                <div class="image-caption2">Wydarzenie</div>
+            </a>
+        </div>
+        <div class="image-container">
+            <a href="https://www.example.com">
+                <img src="3.jpg" alt="Obraz 2" class="image">
+                <div class="image-caption">Opis obrazu 2</div>
+            </a>
+        </div>
+        <div class="image-container">
+            <a href="https://www.example.com">
+                <img src="obraz3.jpg" alt="Obraz 3" class="image">
+                <div class="image-caption">Opis obrazu 3</div>
+            </a>
+        </div>
+		
+		
+		
+        <!-- Dodaj więcej obrazów według potrzeb -->
+    </div>
+
+    <br><br><br>
+    <button onclick="window.location.href='index.html'" style="margin-left: 10px; font-size: 16px; background-color: #31a097; padding: 10px; border-radius: 10px;">Powrót</button>
+
+  <br><br><br><br>
+
+    <footer>
+        © 2024 – Fundacja JesteśMY – Wszelkie prawa zastrzeżone
+    </footer>
+</body>
+</html>

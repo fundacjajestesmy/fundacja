@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprzęt AGD</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FFFFFF;
+        }
+        header {
+            background-color: #FFFFFF; /* Białe tło */
+            color: #333; /* Ciemny kolor tekstu */
+            padding: 5px 20px; /* Zmniejszenie paddingu górnego i dolnego */
+            height: 80px; /* Nowa wysokość nagłówka */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Cień */
+        }
+
+        footer {
+            font-size: 12px;
+            background-color: #31a097;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+		.image-container2 {
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			padding: 5px;
+		}
+
+		.image-container2 img {
+			width: 300px;
+			height: 400px;
+			margin: 5px; /* Zwiększony margines między obrazami */
+		}
+	
+        /* Styl modala */
+        .modal {
+          display: none; /* Ukrywamy modal domyślnie */
+          position: fixed; /* Modal jest pozycjonowany w sposób absolutny */
+          z-index: 1; /* Na wierzchu innych elementów */
+          padding-top: 50px; /* Odległość od góry ekranu */
+          left: 0;
+          top: 0;
+          width: 100%; /* Pełna szerokość modala */
+          height: 100%; /* Pełna wysokość modala */
+          overflow: auto; /* Dodanie scrolla, jeśli zawartość modala jest większa niż okno przeglądarki */
+          background-color: rgb(0,0,0); /* Kolor tła */
+          background-color: rgba(0,0,0,0.9); /* Kolor tła z przezroczystością */
+        }
+
+        /* Styl obrazu w modalu */
+        .modal-content {
+          margin: auto;
+          display: block;
+          width: 80%; /* Szerokość obrazu w modalu */
+          max-width: 700px; /* Maksymalna szerokość obrazu */
+        }
+
+        /* Styl ikony zamknięcia */
+        .close {
+          position: absolute;
+          top: 15px;
+          right: 35px;
+          color: #f1f1f1;
+          font-size: 40px;
+          font-weight: bold;
+          transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: #bbb;
+          text-decoration: none;
+          cursor: pointer;
+        }   
+        
+        /* Media queries dla małych ekranów */
+        @media only screen and (max-width: 1000px) {
+            .image-container {
+                width: 100%;
+            }
+        }
+		
+    </style>
+</head>
+<body>
+    <header>
+        <a href="..\..\Aktualnosci.html">
+            <img src="..\..\logo.png" alt="Logo">
+        </a>
+    </header>
+
+            <!-- Modal -->
+            <div id="myModal" class="modal">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <img class="modal-content" id="img01">
+            </div>
+            
+             <script>
+             // Funkcja zmieniająca kursor na łapkę
+                function changeCursor(img) {
+                    img.style.cursor = "pointer";
+                }
+
+                // Funkcja przywracająca domyślny kursor
+                function restoreCursor() {
+                    var img = document.querySelector('.image-container img');
+                    img.style.cursor = "auto";
+                }
+             </script>
+
+			 <script>
+			 // Funkcja otwierająca modal i ustawiająca obraz w modalu
+				function openModal(img) {
+				  var modal = document.getElementById("myModal");
+				  var modalImg = document.getElementById("img01");
+				  modal.style.display = "block";
+				  modalImg.src = img.src;
+				}
+
+				// Funkcja zamykająca modal
+				function closeModal() {
+				  var modal = document.getElementById("myModal");
+				  modal.style.display = "none";
+				}
+			</script>
+		
+		
+			<div style="padding: 15px;">   
+			   <h2 style="color:#008080; font-size: 40px; text-align: center; font-family: 'Arial', Times, serif;">Trwa zbiórka na remont pokoju dziennego samotnego pana!</h2>
+			</div>
+			
+			<div style="padding: 15px;">   
+					<div class="image-container2">
+						<img src="1.jpg" alt="Image 1" onmouseover="changeCursor(this)" onmouseleave="restoreCursor()" onclick="openModal(this)">
+						<img src="2.jpg" alt="Image 1" onmouseover="changeCursor(this)" onmouseleave="restoreCursor()" onclick="openModal(this)">
+						<img src="3.jpg" alt="Image 1" onmouseover="changeCursor(this)" onmouseleave="restoreCursor()" onclick="openModal(this)">
+						<img src="4.jpg" alt="Image 1" onmouseover="changeCursor(this)" onmouseleave="restoreCursor()" onclick="openModal(this)">
+					</div>
+				</div>
+			</div>
+
+				<p style="text-align: justify; font-family: 'Arial', Times, serif; color: gray; margin: 10px; line-height: 1.6;">
+					Nasz podopieczny, 64 letni samotny Pan, mieszka w bardzo skromnych warunkach. Nazwanie ich warunkami skrajnymi, nie będzie żadnym nadużyciem. W domu z 1958 roku nie ma bieżącej wody, brakuje sanitariatu, nie ma również szamba, a elektryka i stolarka drzwiowa oraz okienna wymagają wymiany.
+				</p>	
+				<p style="text-align: justify; font-family: 'Arial', Times, serif; color: gray; margin: 10px; line-height: 1.6;">
+					W dniu 19 kwietnia przeprowadzone zostały oględziny stanu dachu, elewacji i instalacji elektrycznej. Stan domu okazał się gorszy niż pierwotnie zakładaliśmy. Wymagany jest kapitalny remont oraz uzyskanie zezwoleń.
+				</p>	
+				<p style="text-align: justify; font-family: 'Arial', Times, serif; color: gray; margin: 10px; line-height: 1.6;">
+					Skupiamy się więc w pierwszej kolejności na niewielkim remoncie pokoju dziennego i jednocześnie sypialni pana, aby poprawić komfort jego życia w domu rodzinnym.
+				</p>	
+				<p style="text-align: justify; font-family: 'Arial', Times, serif; color: gray; margin: 10px; line-height: 1.6;">
+					Planujemy wymianę instalacji elektrycznej na bezpieczną, malowanie ścian, wymianę podłogi, wymianę mebli i wyposażenia. Zakładamy także wymianę nieszczelny i dziurawych drzwi wejściowych, które z uwagi na niestandardowy wymiar muszą zostać wykonane na zamówienie.
+				</p>	
+				<p style="text-align: justify; font-family: 'Arial', Times, serif; color: gray; margin: 10px; line-height: 1.6;">
+					Wszystkich, którzy chcieliby wesprzeć nas w realizacji tego pierwszego celu i pomóc Panu zachęcamy do dokonania wpłaty na zbiórkę założoną przez Prezes Fundacji JesteśMY!. Cały dochód zostanie przeznaczony na remont oraz ew. zakup sprzętów do domu naszego podopiecznego.
+				</p>	
+				<p style="text-align: justify; font-family: 'Arial', Times, serif; color: gray; margin: 10px; line-height: 1.6;">
+					Firmy, które chciałaby wesprzeć nas barterowo, np. w dostarczeniu odpowiednich drzwi prosimy o kontakt: 508 009 870, jestemy.kontakt@gmail.com.
+				</p>	
+				<p style="text-align: justify; font-family: 'Arial', Times, serif; color: gray; margin: 10px; line-height: 1.6;">
+					Z serca dziękujemy!
+				</p>	
+				<br/>
+		
+        <button onclick="window.location.href='../../Aktualnosci.html'" style="margin-left: 10px; font-size: 16px; background-color: #31a097; padding: 10px; border-radius: 10px;">Powrót</button>
+        <br><br><br><br>
+
+    <footer>
+        © 2024 – Fundacja JesteśMY – Wszelkie prawa zastrzeżone
+    </footer>
+</body>
+</html>

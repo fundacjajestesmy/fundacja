@@ -33,79 +33,88 @@
             bottom: 0;
             width: 100%;
         }
-        .container {
+
+        .row {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            width: 1000px; /* Możesz dostosować szerokość kontenera głównego */
-            margin: 0 auto; /* Wyśrodkowanie kontenera */
-           /* border: 2px solid #000; /* Obramowanie 2px, czarne */
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap; /* Pozwala na zwijanie wierszy na mniejszych ekranach */
+            margin: 10px 0;
         }
 
-        .image-container {
-            position: relative; /* Ustawienie pozycji względem kontenera */
-            width: 300px; /* Dostosuj szerokość kontenera według potrzeb */
-            margin-bottom: 20px; /* Dostosuj marginesy według potrzeb */
-          /*  border: 2px solid #000; /* Obramowanie 2px, czarne */
+        .container {
+            width: 500px; /* Zmniejszam szerokość kontenera */
+            margin: 20px;      
+            text-align: left;
+            position: relative;      
         }
 
-        .image {
-            width: 100%; /* Obraz zajmie całą szerokość kontenera */
+        .container img {
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
         }
 
-        .image-caption {
-            position: absolute; /* Ustawienie absolutnej pozycji */
-            bottom: 0; /* Opis będzie umieszczony na dole obrazka */
-            left: 0; /* Opis będzie wyrównany do lewej */
-            width: 100%; /* Opis będzie zajmować całą szerokość obrazka */
-            background-color: rgba(0, 0, 0, 0.5); /* Przezroczyste tło */
-            color: white; /* Kolor tekstu */
-            padding: 5px; /* Dostosuj wewnętrzne odstępy */
-            box-sizing: border-box; /* Wliczenie paddingu w szerokość i wysokość */
-            font-size: 16px; /* Zmniejsz rozmiar tekstu */
+        .container img:hover {
+            transform: scale(1.2); /* Powiększenie obrazu o 20% */
+        }
+
+        .black-container {
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            color: #008080;       
+            font-size: 20px;    
+            width: 90%;
+            padding: 5px;
+            box-sizing: border-box;
+			margin-left: 5%;
         }
 
         .image-caption2 {
-            position: absolute; /* Ustawienie absolutnej pozycji */
-            top: 0; /* Opis będzie umieszczony na dole obrazka */
-            right: 0; /* Opis będzie wyrównany do prawej */
-            width: 50%; /* Opis będzie zajmować 60% szerokości obrazka */
+            position: absolute;
+            top: 20px;
+            right: 380px;
             text-align: center;
-            background-color: rgb(239, 80, 122);
-            color: white; /* Kolor tekstu */
-            padding: 5px; /* Dostosuj wewnętrzne odstępy */
-            box-sizing: border-box; /* Wliczenie paddingu w szerokość i wysokość */
-            margin: 10px; /* Dodaj odstępy zewnętrzne */
-            font-size: 16px; /* Zmniejsz rozmiar tekstu */
-            border-radius: 10px; /* Zaokrąglij rogi */
+            background-color: #20B2AA;
+            color: white;
+            padding: 15px;
+            box-sizing: border-box;
+            font-size: 14px;
+            border-radius: 10px;
         }
 
-		@media screen and (max-width: 600px) {
-			.container {
-				width: auto; /* Usuń sztywną szerokość */
-			}
-
-			.image-container {
-				width: 100%; /* Obrazek będzie zajmował całą szerokość ekranu */
-				margin-bottom: 20px; /* Zachowaj marginesy, jeśli to konieczne */
-			}
-
-			}
+        @media screen and (max-width: 600px) {
+            .row {
+                flex-direction: column; /* Ustawienie kontenerów w kolumnie */
+                align-items: center;
+            }
+            .container {
+                width: 90%; /* Szerokość kontenera na małych ekranach */
+                margin: 10px 0;
+            }
+            .image-caption2 {
+                right: auto;
+                left: 15px;
+                
+            }
+        }
 			
-		@media screen and (min-width: 601px) and (max-width: 1000px) {
-				.container {
-					width: 600px; /* Podziel szerokość ekranu na dwie kolumny */
-				}
-
-				.image-container {
-					width: 280px; /* Dostosuj szerokość kontenera obrazka */
-					margin-bottom: 20px; /* Zachowaj marginesy, jeśli to konieczne */
-				}
-		}
-		}
-	}
-		
-		
+        @media screen and (min-width: 601px) and (max-width: 1000px) {
+            .container {
+                width: 45%; /* 45% szerokości ekranu */
+                margin: 10px;
+            }
+			.image-caption2 {
+                right: auto;
+                left: 15px;
+                
+            }
+        }
     </style>
 </head>
 <body>
@@ -115,36 +124,59 @@
         </a>
     </header>
 
-    <div class="container">
-        <div class="image-container">
-            <a href="Aktualnosci\Kuchenka.html">
-                <img src="Aktualnosci\1.jpg" alt="Obraz 1" class="image">
-                <div class="image-caption">Zakup nowej kuchenki dla Pana Starszego Sympatycznego</div>
-                <div class="image-caption2">Wydarzenie</div>
-            </a>
+    <div class="row">
+		<div class="container"> 
+			<a href="Aktualnosci\Remont_pokoju\Remont.html">
+				<img src="Aktualnosci\Remont_pokoju\1.jpg" alt="Obraz 1">
+				<div class="image-caption2">Wydarzenie</div>
+				<div class="black-container">
+					<h2>Trwa zbiórka na remont pokoju samotnego pana!</h2>
+					<p style="color: green; font-size: 20px;">13.05.2024 r.</p>
+					<p style="color: gray; font-size: 20px;">Nasz podopieczny, 64 letni samotny Pan, mieszka w bardzo skromnych warunkach. Nazwanie ich warunkami skrajnymi...</p>
+				</div>
+			</a>
+		</div>
+        <div class="container">
+			<a href="Aktualnosci\Instalacja_elektryczna\Instalacja_elektr.html">
+				<img src="Aktualnosci\Instalacja_elektryczna\1.jpg" alt="Obraz 1">
+				<div class="image-caption2">Wydarzenie</div>
+				<div class="black-container">
+					<h2>Wymiana grożącej pożarem instalacji elektrycznej</h2>
+					<p style="color: green; font-size: 20px;">07.06.2024 r.</p>
+					<p style="color: gray; font-size: 20px;">Miesiąc maj i czerwiec to czas, który poświęciliśmy także na wymianę niebezpiecznej, grożącej pożarem instalacji elektrycznej...</p>
+				</div>
+			</a>
         </div>
-        <div class="image-container">
-            <a href="https://www.example.com">
-                <img src="3.jpg" alt="Obraz 2" class="image">
-                <div class="image-caption">Opis obrazu 2</div>
-            </a>
+    </div>
+    <div class="row">
+        <div class="container">
+			<a href="Aktualnosci\Sprzet_agd\Sprzet_agd.html">
+				<img src="Aktualnosci\Sprzet_agd\1.jpg" alt="Obraz 1">
+				<div class="image-caption2">Wydarzenie</div>
+				<div class="black-container">
+					<h2>Wymiana sprzętu AGD w domu starszego Pana</h2>
+					<p style="color: green; font-size: 20px;">26.05.2024 r.</p>
+					<p style="color: gray; font-size: 20px;">Znacie to uczucie, kiedy wszystko zaczyna się walić w jednej chwili?  Człowiek zastanawia się, co się dzieje i wpada w zakłopotanie. Psują się...</p>
+				</div>
+			</a>
         </div>
-        <div class="image-container">
-            <a href="https://www.example.com">
-                <img src="obraz3.jpg" alt="Obraz 3" class="image">
-                <div class="image-caption">Opis obrazu 3</div>
-            </a>
+        <div class="container">
+			<a href="Aktualnosci\Kuchenka\Kuchenka.html">
+				<img src="Aktualnosci\Kuchenka\1.jpg" alt="Obraz 1">
+				<div class="image-caption2">Wydarzenie</div>
+				<div class="black-container">
+					<h2>Zakup nowego pieca do ogrzania domu</h2>
+					<p style="color: green; font-size: 20px;">26.05.2024 r.</p>
+					<p style="color: gray; font-size: 20px;">Przeprowadziliśmy zbiórkę publiczną, z której zysk przeznaczyliśmy na sfinansowanie zakupu nowej westfalki do ogrzania domu...</p>
+				</div>
+			</a>
         </div>
-		
-		
-		
-        <!-- Dodaj więcej obrazów według potrzeb -->
     </div>
 
     <br><br><br>
     <button onclick="window.location.href='index.html'" style="margin-left: 10px; font-size: 16px; background-color: #31a097; padding: 10px; border-radius: 10px;">Powrót</button>
 
-  <br><br><br><br>
+    <br><br><br><br>
 
     <footer>
         © 2024 – Fundacja JesteśMY – Wszelkie prawa zastrzeżone

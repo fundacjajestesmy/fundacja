@@ -10,7 +10,7 @@
             margin: 0;
             padding: 0;
             background-color: #FFFFFF;
-			margin-bottom: 40px;
+            margin-bottom: 40px;
         }
         header {
             background-color: #FFFFFF; /* Białe tło */
@@ -22,24 +22,24 @@
             justify-content: space-between;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Cień */
         }
-		nav {
+        nav {
             display: flex;
             justify-content: space-between; /* Wyrównanie elementów w nagłówku */
             align-items: center; /* Wyśrodkowanie wertykalne */
         }
-		
-		nav a {
+        
+        nav a {
             text-decoration: none;
             margin: 10px;
             border-radius: 5px;
             background-color: #20B2AA;
             transition: background-color 0.3s;
-			color: white;
-			padding: 16px;
-			font-size: 16px;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
         }
-	
-		nav a:hover {
+    
+        nav a:hover {
             background-color: #008080; /* Jasno niebieski po najechaniu */
         }
 
@@ -82,56 +82,70 @@
 			justify-content: center;
 			align-items: center;
 		}
+		
+		#image-container2 {
+			width: 330px;
+			height: 300px;
+			overflow: hidden;
+			position: relative;
+			margin: 0 auto; /* Wyśrodkowanie */
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 
-        #image-container img {
-            object-fit: cover;
-            position: absolute;
-            transition: opacity 1s ease-in-out;
+
+		#image-container img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			position: absolute;
+			transition: opacity 1s ease-in-out;
+		}
+
+				
+        .dropdown {
+          position: relative;
+          display: inline-block;
         }
-		
-		
-		.dropdown {
-		  position: relative;
-		  display: inline-block;
-		}
 
-		.dropbtn {
-		  background-color: #20B2AA;
-		  color: #333;
-		  border-radius: 5px;
-		  color: white;
-		  padding: 16px;
-		  font-size: 16px;
-		  border: none;
-		  cursor: pointer;
-		}
+        .dropbtn {
+          background-color: #20B2AA;
+          color: #333;
+          border-radius: 5px;
+          color: white;
+          padding: 16px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+        }
 
-		.dropdown-content {
-		  display: none;
-		  position: absolute;
-		  background-color: #f9f9f9;
-		  min-width: 250px;
-		  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-		  z-index: 1;
-		}
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 250px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
 
-		.dropdown-content a {
-		  color: black;		
-		  text-decoration: none;
-		  display: block;
-		}
+        .dropdown-content a {
+          color: black;        
+          text-decoration: none;
+          display: block;
+        }
 
-		.dropdown-content a:hover {
-		  background-color: #f1f1f1;
-		}
+        .dropdown-content a:hover {
+          background-color: #f1f1f1;
+        }
 
-		.dropdown:hover .dropdown-content {
-		  display: block;
-		}
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
 
-		.dropdown:hover .dropbtn {
-		  background-color: #008080;
-		}
+        .dropdown:hover .dropbtn {
+          background-color: #008080;
+        }
 
         .full-page {
             width: 100%;
@@ -143,120 +157,181 @@
             width: 100%;
             height: 60%;           
         }
-		
+        
         .container {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-around;
-                margin: 20px 0;
-            }
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
 
-            .item {
-                text-align: left;
-                width: 300px; /* szerokość kontenera */
-                height: auto; /* wysokość kontenera */
-                margin-bottom: 10px; /* odstęp między kontenerami */
-                overflow: hidden; /* ukrycie nadmiarowych fragmentów obrazu */
-            }
+        .item {
+            text-align: left;
+            width: 300px; /* szerokość kontenera */
+            height: auto; /* wysokość kontenera */
+            margin-bottom: 20px; /* odstęp między kontenerami */
+           
+        }
 
-            .item img {
-                width: 100%; /* obraz zajmuje całą szerokość kontenera */
-                height: auto; /* obraz zachowuje proporcje */
-                object-fit: cover; /* obraz jest dopasowywany do wymiarów kontenera */
-            }
+        .item img {
+            width: 100%; /* obraz zajmuje całą szerokość kontenera */
+            height: 300px; /* obraz zachowuje proporcje */
+           
+        }
 
-            .item p {
-                margin: 5px 0;
-            }
-
-            .small-text {
-                font-size: 20px; /* zmniejszenie rozmiaru tekstu */ 
-                padding: 5px;              
-            }
-
-
-
-
-
-		@media screen and (max-width: 800px) { /* Nowe style responsywne dla małych ekranów */
-			.content {
-				flex-direction: column; /* Zmiana układu na jedną kolumnę */
-				align-items: center; /* Wyśrodkowanie zawartości */
-			}
-
-			.column {
-				flex-basis: 100%; /* Pełna szerokość dla małych ekranów */
-				margin-bottom: 20px; /* Dodatkowy odstęp między kolumnami */
-			}
-			
-			 /* Zmniejszenie rozmiaru przycisków */
-			nav a {
-				margin: 5px; /* Zmniejszenie marginesów między przyciskami */
-				padding: 5px; /* Zmniejszenie wewnętrznego marginesu */
-				font-size: 50%; /* Zmniejszenie rozmiaru czcionki */
-			}
-			
-			.dropbtn {
-				/* Zmniejszenie marginesów między przyciskami */
-				padding: 5px; /* Zmniejszenie wewnętrznego marginesu */
-				font-size: 50%; /* Zmniejszenie rozmiaru czcionki */
-			}		
-
-            .item {
-                width: 90%; /* pełna szerokość dla mniejszych ekranów */
-            }
+		.item p {
+			text-align: justify;
+			margin: 5px 0;
 		}
+		
+		.image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }	
 
+        .small-text {
+            font-size: 20px; /* zmniejszenie rozmiaru tekstu */ 
+            padding: 5px;              
+        }
+		
+		.container2 {
+            display: flex;
+            width: 100%;
+			background-color: #31a097;
+			background-image: url('Logo/logo_jestesmy_sygnet_color.png');
+			background-size: contain; /* Skaluje obraz, aby był w całości widoczny w kontenerze */
+			background-position: center;
+			background-repeat: no-repeat; /* Zapobiega powtarzaniu się obrazu */
+        }
+		
+        .container2 img {
+            max-width: 100%;
+            height: auto;
+        }
+        .image, .text {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        .image {
+            padding: 100px; /* Dodajemy odstępy wokół obrazka */
+			align-items: center;
+        }
+        .text {
+            padding: 50px;
+            flex-direction: column; /* Ustawienie flex-direction na column, aby elementy były w kolumnie */
+        }
+        .text h2 {
+            margin-bottom: 20px; /* Dodajemy odstęp między nagłówkiem a akapitem */
+            font-size: 40px;
+        }
+		.text p {
+            font-size: 20px;
+        }
+
+        @media screen and (max-width: 800px) { /* Nowe style responsywne dla małych ekranów */
+            .content {
+                flex-direction: column; /* Zmiana układu na jedną kolumnę */
+                align-items: center; /* Wyśrodkowanie zawartości */
+            }
+
+            .column {
+                flex-basis: 100%; /* Pełna szerokość dla małych ekranów */
+                margin-bottom: 20px; /* Dodatkowy odstęp między kolumnami */
+            }
+            
+            /* Zmniejszenie rozmiaru przycisków */
+            nav a {
+                margin: 5px; /* Zmniejszenie marginesów między przyciskami */
+                padding: 5px; /* Zmniejszenie wewnętrznego marginesu */
+                font-size: 50%; /* Zmniejszenie rozmiaru czcionki */
+            }
+            
+            .dropbtn {
+                /* Zmniejszenie marginesów między przyciskami */
+                padding: 5px; /* Zmniejszenie wewnętrznego marginesu */
+                font-size: 50%; /* Zmniejszenie rozmiaru czcionki */
+            }        
+
+            .item {
+                width: 300px; /* pełna szerokość dla mniejszych ekranów */
+            }
+			
+			.container2 {
+                flex-direction: column; /* Ustawienie układu na kolumnowy dla małych ekranów */
+                align-items: center; /* Wyśrodkowanie zawartości */
+            }
+
+            .container2 .image {
+                padding: 20px; /* Zmniejszenie odstępów wokół obrazka */
+            }
+
+            .container2 .text {
+                padding: 20px; /* Zmniejszenie paddingu dla tekstu */
+            }
+
+            .text h2 {
+                font-size: 30px; /* Zmniejszenie rozmiaru czcionki nagłówka */
+            }
+
+            .text p {
+                font-size: 16px; /* Zmniejszenie rozmiaru czcionki akapitów */
+            }
+        }
+			
     </style>
+	
+	<link rel="stylesheet" href="Obrazy_strona_glowna\styles.css">
 </head>
 <body>
     <header>
         <img src="logo.png" alt="Logo">
         <nav>   
-			<a href="Aktualnosci.html">Aktualności</a>
-			
-			<div class="dropdown">
-			  <button style="margin-left: 10px;" class="dropbtn">Fundacja</button>
-			  <div class="dropdown-content">
-				<a href="Dlaczego_dzialamy.html">Dlaczego działamy?</a>
-				<a href="Zalozenia.html">Założenia funkcjonowania</a>
-				<a href="Jak_pomagamy.html">Jak pomagamy?</a>
-				<a href="Dok_organizacyjne.html">Dokumenty organizacyjne</a>
-			  </div>
-			</div>
-			
-			<a style="margin-left: 20px;" href="O_nas.html">O nas</a>
+            <a href="Aktualnosci.html">Aktualności</a>
+            
+            <div class="dropdown">
+              <button style="margin-left: 10px;" class="dropbtn">Fundacja</button>
+              <div class="dropdown-content">
+                <a href="Dlaczego_dzialamy.html">Dlaczego działamy?</a>
+                <a href="Zalozenia.html">Założenia funkcjonowania</a>
+                <a href="Jak_pomagamy.html">Jak pomagamy?</a>
+                <a href="Dok_organizacyjne.html">Dokumenty organizacyjne</a>
+              </div>
+            </div>
+            
+            <a style="margin-left: 20px;" href="O_nas.html">O nas</a>
             <a href="Chce_pomoc.html">Chcę pomóc</a>
-			<a href="Kontakt.html">Kontakt</a>
-		 </nav>	 		
+            <a href="Kontakt.html">Kontakt</a>
+         </nav>       
     </header>
 
     <div class="full-page">
         <img src="1.jpg" alt="Full Page Image">
     </div>
-
+	
+	<!------ KONTENER GŁÓWNY ---->
     <div class="content">
-
         <div class="column">
             <img src="logo2.png" alt="Logo">
-			<br><br><br><br>
-			
+            <br><br><br><br>
+            
             <h2 style="color:#008080; font-size: 28px;">Fundacja JesteśMY</h2>
-			
+            
             <p style="text-align: justify; font-family: 'Arial', Times, serif; font-size: 18px; color:#081716; line-height: 1.5;">
-			Inicjatywa powstania fundacji JesteśMy pochodzi od osób, które od ponad dekady działają charytatywnie i pracują społecznie. Osób, dla których niepełnosprawność, osamotnienie, starość, wykluczenie i ubóstwo to wystarczające powody do udzielenia mądrej, tzn. skonkretyzowanej pomocy.
+            Fundacja JesteśMy! zaczęła działać od 15 kwietnia 2024 r. Tworzymy miejsce, w którym osoby samotne, wykluczone, niepełnosprawne i starsze będą w stanie znaleźć wsparcie realnie wpływające na komfort ich życia. Planujemy działalność kilkuetapową.
+            <a href="Dlaczego_dzialamy.html" style="text-decoration: none; font-size: 15px; color: blue;">(Czytaj dalej)</a>
 			</p>
-			<p style="text-align: justify; font-family: 'Arial', Times, serif; font-size: 18px; color:#081716; line-height: 1.5;">
-				Nasza dotychczasowa wielopłaszczyznowa działalność na rzecz osób szczególnie potrzebujących wsparcia wywołała potrzebę zoptymalizowania wszystkich działań i narzędzi, a także opracowania konkretnego planu pomocy, aby zakres jej był nie tylko większy, ale także realnie bardziej celowy, a efekt rokujący.
-				<a href="Dlaczego_dzialamy.html" style="text-decoration: none; font-size: 15px; color: blue;">(Czytaj dalej)</a>
-			</p>
-
-        </div>
-		
-        <div class="column" style="margin-left: 15px;">
+    </div>
+        
+	<!------ ROLKA ---->
+    <div class="column" style="margin-left: 15px; text-align: center;">
             <div id="image-container">
                 <img src="Rolka/1.png" alt="Obraz 1">
-                <img src="Rolka/2.png" alt="Obraz 2" style="opacity: 0;">
+                <img src="Rolka/2.png" alt="Obraz 2">
+                <img src="Rolka/3.jpg" alt="Obraz 3">
+                <img src="Rolka/4.jpg" alt="Obraz 4">
             </div>
 
             <script>
@@ -280,44 +355,88 @@
             
                 setInterval(nextImage, 5000);
             </script>
-
-			<br><br>
-
-            <div class="column">
-                <h2 style="text-align: center; color:#008080">Ważne Wydarzenia</h2>
-                <p style="text-align: center;">xxxxx</p>
-            </div>
         </div>
     </div>
 
-    <br><br><br>
+    <br><br><br><br><br>
     
+	<!------ JAK TO ROBIMY ---->
+	<h2 style="text-align: center; color: black; font-size: 38px;">
+        <span style="text-decoration: underline #008080;">Jak to robimy?</span>
+    </h2>
+	<div class="container3">
+        <div class="box"><img src="Obrazy_strona_glowna\1.png" alt="Obraz 1"></div>
+        <div class="box"><img src="Obrazy_strona_glowna\2.png" alt="Obraz 2"></div>
+        <div class="box"><img src="Obrazy_strona_glowna\3.png" alt="Obraz 3"></div>
+        <div class="box"><img src="Obrazy_strona_glowna\4.png" alt="Obraz 4"></div>
+        <div class="box"><img src="Obrazy_strona_glowna\5.png" alt="Obraz 5"></div>
+        <div class="box"><img src="Obrazy_strona_glowna\6.png" alt="Obraz 6"></div>
+        <div class="box"><img src="Obrazy_strona_glowna\7.png" alt="Obraz 7"></div>
+        <div class="box"><img src="Obrazy_strona_glowna\8.png" alt="Obraz 8"></div>
+        <div class="box"><img src="Obrazy_strona_glowna\9.png" alt="Obraz 9"></div>
+    </div>
+	
+	 <br><br><br><br><br>
+	
+	<!------ WAŻNE WYDARZENIE ---->
+	<h2 style="text-align: center; color: black; font-size: 38px;">
+        <span style="text-decoration: underline #008080;">Ważne wydarzenia</span>
+    </h2>
+	<br><br>
+	<div class="container2">
+        <div class="image">
+            <img src="Aktualnosci/Kuchenka/4.jpg" alt="Opis obrazka">
+        </div>
+        <div class="text">
+            <h2>Zakup pieca dla starszego Pana!</h2>
+            <p>Dzięki wsparciu wielu osób udało nam się zebrać odpowiednią kwotę na zakup nowej, bezpiecznej westfalki z płaszczem wodnym.</p>
+			<a href="Aktualnosci/Kuchenka/Kuchenka.html" style="text-decoration: none; font-size: 15px; color: blue;">(Czytaj dalej)</a>
+        </div>
+    </div>
+	
+	 <br><br><br>
+	
+	<!------ BLOG ---->
     <h2 style="text-align: center; color: black; font-size: 38px;">
         <span style="text-decoration: underline #008080;">Blog</span>
     </h2>
-
+	<br><br>
     <div class="container">
         <div class="item">
-          <img src="x.jpg" alt="Obraz 1">
-          <p class="small-text"><strong>Czym jest fundacja?</strong></p>
-          <p style="padding: 5px; line-height: 1.5;">Poszczególne fundacje mogą różnić się między sobą diametralnie. Różnorodność ta wynika z tego .....</p>
-
-          <br>
-          <a href="xxxx.html" style="text-decoration: none; font-size: 15px; color: blue; padding: 5px;">(Czytaj dalej)</a>
+          <img src="Blog/2.jpg" alt="Obraz 1">
+		  <h2 style="color:gray;">WPIS</h2>
+          <p style="line-height: 1.5;">Czy wiesz, że są wśród nas seniorzy, którzy na przeżycie mają mniej aniżeli 5 zł dziennie?</p>  
+          <a href="Blog/1.html" style="text-decoration: none; font-size: 15px; color: blue;">(Czytaj dalej)</a>
+		  <br><br><br>
+        </div>
+		
+		<div class="item">
+			<img src="Blog/1.jpg" alt="Obraz 2">
+			<h2 style="color:gray;">WPIS</h2>
+			<p style="line-height: 1.5;">W związku z naszą startującą działalnością, będziemy poszukiwać do współpracy:</p>
+			<p>▪️prawnika, radcę prawnego,</p>
+			<p>▪️psychologa,</p>
+			<p>▪️doradcę zawodowego,</p>
+			<p>▪️coacha,</p>
+			<p>▪️dietetyka.</p>
+			<p style="line-height: 1.5;">Osoby z wiedzą z wyżej wymienionych obszarów chętne do działania, zapraszamy do kontaktu w wiadomości prywatnej lub mailowej:</p>
+			<p style="line-height: 1.5;">kontakt@jestesmy-fundacja.pl</p>
+			<br><br>
+		</div>
+		
+        <div class="item">
+          <img src="Blog/5.jpg" alt="Obraz 3">
+		  <h2 style="color:gray;">AKTUALNOŚCI</h2>
+          <p style="line-height: 1.5;">22.05.2024 r. Konkurs Poezji Miłosnej z twórczością Adama Asnyka</p>  
+          <a href="Blog/2.html" style="text-decoration: none; font-size: 15px; color: blue;">(Czytaj dalej)</a>
+		  <br><br><br>
         </div>
         <div class="item">
-          <img src="x.jpg" alt="Obraz 2">
-          <p>Opis obrazu 2</p>
-        </div>
-        <div class="item">
-          <img src="obraz3.jpg" alt="Obraz 3">
-          <p>Opis obrazu 3</p>
-        </div>
-        <div class="item">
-          <img src="obraz4.jpg" alt="Obraz 4">
+          <img src="2.jpg" alt="Obraz 4">
           <p>Opis obrazu 4</p>
         </div>
-      </div>
+    </div>
+
 
     <footer>
         © 2024 – Fundacja JesteśMY – Wszelkie prawa zastrzeżone
